@@ -20,8 +20,6 @@ class Gitea < Formula
     url "https://github.com/go-gitea/gitea.git", :branch => "master"
 
     depends_on "go" => :build
-    depends_on "mercurial" => :build
-    depends_on "bzr" => :build
     depends_on "git" => :build
   end
 

@@ -20,8 +20,6 @@ class Lgtm < Formula
     url "https://github.com/go-gitea/lgtm.git", :branch => "master"
 
     depends_on "go" => :build
-    depends_on "mercurial" => :build
-    depends_on "bzr" => :build
     depends_on "git" => :build
   end
 
