@@ -27,7 +27,8 @@ class Gitea < Formula
   end
 
   def install
-    if build.head?
+    case
+    when build.head?
       mkdir_p buildpath/File.join("src", "code.gitea.io")
       ln_s buildpath, buildpath/File.join("src", "code.gitea.io", "gitea")
 
@@ -40,7 +41,7 @@ class Gitea < Formula
       system "cd src/code.gitea.io/gitea && make build"
 
       bin.install "#{buildpath}/gitea" => "gitea"
-    elsif build.devel?
+    when build.devel?
       bin.install "#{buildpath}/gitea-master-darwin-10.6-amd64" => "gitea"
     else
       bin.install "#{buildpath}/gitea-1.0.0-darwin-10.6-amd64" => "gitea"

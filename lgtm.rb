@@ -28,7 +28,8 @@ class Lgtm < Formula
   end
 
   def install
-    if build.head?
+    case
+    when build.head?
       mkdir_p buildpath/File.join("src", "github.com", "go-gitea")
       ln_s buildpath, buildpath/File.join("src", "github.com", "go-gitea", "lgtm")
 
@@ -41,8 +42,10 @@ class Lgtm < Formula
       system("make", "build")
 
       bin.install "#{buildpath}/bin/lgtm" => "lgtm"
-    else
+    when build.devel?
       bin.install "#{buildpath}/lgtm-master-darwin-amd64" => "lgtm"
+    else
+      bin.install "#{buildpath}/lgtm-1.0.0-darwin-amd64" => "lgtm"
     end
   end
 end
