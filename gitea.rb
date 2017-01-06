@@ -6,13 +6,13 @@ class Gitea < Formula
 
   stable do
     url "http://dl.gitea.io/gitea/1.0.0/gitea-1.0.0-darwin-10.6-amd64"
-    sha256 `curl -s http://dl.gitea.io/gitea/1.0.0/gitea-1.0.0-darwin-10.6-amd64.sha256`.split(" ").first
+    sha256 `curl -Ls http://dl.gitea.io/gitea/1.0.0/gitea-1.0.0-darwin-10.6-amd64.sha256`.split(" ").first
     version "1.0.0"
   end
 
   devel do
     url "http://dl.gitea.io/gitea/master/gitea-master-darwin-10.6-amd64"
-    sha256 `curl -s http://dl.gitea.io/gitea/master/gitea-master-darwin-10.6-amd64.sha256`.split(" ").first
+    sha256 `curl -Ls http://dl.gitea.io/gitea/master/gitea-master-darwin-10.6-amd64.sha256`.split(" ").first
     version "master"
   end
 
