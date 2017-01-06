@@ -41,8 +41,10 @@ class Gitea < Formula
       system("make", "build")
 
       bin.install "#{buildpath}/bin/gitea" => "gitea"
-    else
+    elsif build.devel?
       bin.install "#{buildpath}/gitea-master-darwin-10.6-amd64" => "gitea"
+    else
+      bin.install "#{buildpath}/gitea-1.0.0-darwin-10.6-amd64" => "gitea"
     end
   end
 end
