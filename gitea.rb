@@ -20,7 +20,6 @@ class Gitea < Formula
     url "https://github.com/go-gitea/gitea.git", :branch => "master"
 
     depends_on "go" => :build
-    depends_on "git" => :build
   end
 
   test do
@@ -38,9 +37,9 @@ class Gitea < Formula
       ENV["GOHOME"] = buildpath
       ENV["TAGS"] = "sqlite"
 
-      system("make", "build")
+      system "cd src/code.gitea.io/gitea && make build"
 
-      bin.install "#{buildpath}/bin/gitea" => "gitea"
+      bin.install "#{buildpath}/gitea" => "gitea"
     elsif build.devel?
       bin.install "#{buildpath}/gitea-master-darwin-10.6-amd64" => "gitea"
     else
