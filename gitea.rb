@@ -5,9 +5,9 @@ class Gitea < Formula
   head "https://github.com/go-gitea/gitea.git"
 
   stable do
-    url "https://dl.gitea.io/gitea/1.0.0/gitea-1.0.0-darwin-10.6-amd64"
-    sha256 `curl -s https://dl.gitea.io/gitea/1.0.0/gitea-1.0.0-darwin-10.6-amd64.sha256`.split(" ").first
-    version "1.0.0"
+    url "https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-darwin-10.6-amd64"
+    sha256 `curl -s https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-darwin-10.6-amd64.sha256`.split(" ").first
+    version "1.0.1"
   end
 
   devel do
