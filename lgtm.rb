@@ -5,22 +5,20 @@ class Lgtm < Formula
   head "https://github.com/go-gitea/lgtm.git"
 
   stable do
-    url "http://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-amd64"
-    sha256 `curl -s http://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-amd64.sha256`.split(" ").first
+    url "https://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-10.6-amd64"
+    sha256 `curl -s https://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-10.6-amd64.sha256`.split(" ").first
     version "1.0.0"
   end
 
   devel do
-    url "http://dl.gitea.io/lgtm/master/lgtm-master-darwin-amd64"
-    sha256 `curl -s http://dl.gitea.io/lgtm/master/lgtm-master-darwin-amd64.sha256`.split(" ").first
+    url "https://dl.gitea.io/lgtm/master/lgtm-master-darwin-10.6-amd64"
+    sha256 `curl -s https://dl.gitea.io/lgtm/master/lgtm-master-darwin-10.6-amd64.sha256`.split(" ").first
     version "master"
   end
 
   head do
     url "https://github.com/go-gitea/lgtm.git", :branch => "master"
-
     depends_on "go" => :build
-    depends_on "git" => :build
   end
 
   test do
@@ -39,13 +37,13 @@ class Lgtm < Formula
       ENV["GOHOME"] = buildpath
       ENV["TAGS"] = ""
 
-      system("make", "build")
+      system "cd src/github.com/go-gitea/lgtm && make build"
 
-      bin.install "#{buildpath}/bin/lgtm" => "lgtm"
+      bin.install "#{buildpath}/lgtm" => "lgtm"
     when build.devel?
-      bin.install "#{buildpath}/lgtm-master-darwin-amd64" => "lgtm"
+      bin.install "#{buildpath}/lgtm-master-darwin-10.6-amd64" => "lgtm"
     else
-      bin.install "#{buildpath}/lgtm-1.0.0-darwin-amd64" => "lgtm"
+      bin.install "#{buildpath}/lgtm-1.0.0-darwin-10.6-amd64" => "lgtm"
     end
   end
 end
