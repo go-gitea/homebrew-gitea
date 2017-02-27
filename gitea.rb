@@ -5,9 +5,9 @@ class Gitea < Formula
   head "https://github.com/go-gitea/gitea.git"
 
   stable do
-    url "https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-darwin-10.6-amd64"
-    sha256 `curl -s https://dl.gitea.io/gitea/1.0.1/gitea-1.0.1-darwin-10.6-amd64.sha256`.split(" ").first
-    version "1.0.1"
+    url "https://dl.gitea.io/gitea/1.0.2/gitea-1.0.2-darwin-10.6-amd64"
+    sha256 `curl -s https://dl.gitea.io/gitea/1.0.2/gitea-1.0.2-darwin-10.6-amd64.sha256`.split(" ").first
+    version "1.0.2"
   end
 
   devel do
@@ -43,7 +43,7 @@ class Gitea < Formula
     when build.devel?
       bin.install "#{buildpath}/gitea-master-darwin-10.6-amd64" => "gitea"
     else
-      bin.install "#{buildpath}/gitea-1.0.1-darwin-10.6-amd64" => "gitea"
+      bin.install "#{buildpath}/gitea-1.0.2-darwin-10.6-amd64" => "gitea"
     end
   end
 end
