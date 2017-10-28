@@ -5,9 +5,9 @@ class Lgtm < Formula
   head "https://github.com/go-gitea/lgtm.git"
 
   stable do
-    url "https://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-10.6-amd64"
-    sha256 `curl -s https://dl.gitea.io/lgtm/1.0.0/lgtm-1.0.0-darwin-10.6-amd64.sha256`.split(" ").first
     version "1.0.0"
+    url "https://dl.gitea.io/lgtm/#{version}/lgtm-#{version}-darwin-10.6-amd64"
+    sha256 `curl -s https://dl.gitea.io/lgtm/#{version}/lgtm-#{version}-darwin-10.6-amd64.sha256`.split(" ").first
   end
 
   devel do
@@ -43,7 +43,7 @@ class Lgtm < Formula
     when build.devel?
       bin.install "#{buildpath}/lgtm-master-darwin-10.6-amd64" => "lgtm"
     else
-      bin.install "#{buildpath}/lgtm-1.0.0-darwin-10.6-amd64" => "lgtm"
+      bin.install "#{buildpath}/lgtm-#{version}-darwin-10.6-amd64" => "lgtm"
     end
   end
 end
