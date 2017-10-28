@@ -40,8 +40,6 @@ class Lgtm < Formula
       system "cd src/github.com/go-gitea/lgtm && make build"
 
       bin.install "#{buildpath}/lgtm" => "lgtm"
-    when build.devel?
-      bin.install "#{buildpath}/lgtm-master-darwin-10.6-amd64" => "lgtm"
     else
       bin.install "#{buildpath}/lgtm-#{version}-darwin-10.6-amd64" => "lgtm"
     end
