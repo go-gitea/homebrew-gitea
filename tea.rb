@@ -22,7 +22,7 @@ class Gitea < Formula
   end
 
   test do
-    system "#{bin}/gitea", "--version"
+    system "#{bin}/tea", "--version"
   end
 
   def install
