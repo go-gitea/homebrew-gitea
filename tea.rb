@@ -5,7 +5,7 @@ class Tea < Formula
   head "https://github.com/go-gitea/tea.git"
 
   stable do
-    version "1.0.0"
+    version "0.1.0"
     url "https://dl.gitea.io/tea/#{version}/tea-#{version}-darwin-10.6-amd64"
     sha256 `curl -s https://dl.gitea.io/tea/#{version}/tea-#{version}-darwin-10.6-amd64.sha256`.split(" ").first
   end
