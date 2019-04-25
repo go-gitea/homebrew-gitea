@@ -1,6 +1,6 @@
 require "formula"
 
-class Gitea < Formula
+class Tea < Formula
   homepage "https://github.com/go-gitea/tea"
   head "https://github.com/go-gitea/tea.git"
 
@@ -29,7 +29,7 @@ class Gitea < Formula
     case
     when build.head?
       mkdir_p buildpath/File.join("src", "code.gitea.io")
-      ln_s buildpath, buildpath/File.join("src", "code.gitea.io", "gitea")
+      ln_s buildpath, buildpath/File.join("src", "code.gitea.io", "tea")
 
       ENV.append_path "PATH", File.join(buildpath, "bin")
 
