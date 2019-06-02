@@ -1,8 +1,8 @@
 require "formula"
 
 class Tea < Formula
-  homepage "https://github.com/go-gitea/tea"
-  head "https://github.com/go-gitea/tea.git"
+  homepage "https://gitea.com/gitea/tea"
+  head "https://gitea.com/gitea/tea.git"
 
   stable do
     version "0.1.0"
